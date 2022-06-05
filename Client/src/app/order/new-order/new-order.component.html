@@ -1,0 +1,174 @@
+<form #f="ngForm" #newForm class="text-left">
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="fullName">نام و نام خانوادگی</label>
+            <input type="text" class="form-control" [(ngModel)]="currentOrder.customer.fullName" id="fullName"
+                name="fullName">
+        </div>
+        <div class="form-group  col-1">
+            <label for="gender">جنسیت</label>
+            <select name="gender" class="custom-select" [(ngModel)]="currentOrder.customer.gender" id="gender">
+                <option value="male">مرد</option>
+                <option value="female">زن</option>
+            </select>
+        </div>
+        <div class="form-group  col-2">
+            <label for="postalCode">کدپستی</label>
+            <input type="text" name="postalCode" class="form-control" [(ngModel)]="currentOrder.customer.postalCode"
+                id="postalCode">
+        </div>
+        <div class="form-group  col-2">
+            <label for="phone">تلفن</label>
+            <input type="text" name="phone" class="form-control" [(ngModel)]="currentOrder.customer.phone" id="phone">
+        </div>
+        <div class="form-group  col-2">
+            <label for="mobile">موبایل</label>
+            <input type="text" name="mobile" class="form-control" [(ngModel)]="currentOrder.customer.mobile"
+                id="mobile">
+        </div>
+        <div class="form-group  col-2">
+            <label for="orderNumber">شماره سفارش</label>
+            <input disabled type="text" name="orderNumber" class="form-control" [(ngModel)]="currentOrder.orderNumber"
+                id="orderNumber">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="address">آدرس</label>
+            <input name="address" type="text" class="form-control" [(ngModel)]="currentOrder.customer.address"
+                id="address">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group  col-3">
+            <label for="price">مبلغ</label>
+            <input disabled type="text" name="_price" class="form-control" [ngModel]="currentOrder._price|number"
+                id="price">
+        </div>
+        <div class="form-group  col-3">
+            <label for="date">تاریخ</label>
+            <input disabled type="text" name="date" class="form-control" [ngModel]="currentOrder.createDate|persianDate"
+                id="date">
+        </div>
+        <div class="form-group  col-3">
+            <label for="_totalPrice">جمع کل</label>
+            <input disabled type="text" name="_totalPrice" class="form-control"
+                [ngModel]="currentOrder._totalPrice|number" id="_totalPrice">
+        </div>
+        <div class="form-group  col-3">
+            <label for="status">وضعیت</label>
+            <select name="status" class="custom-select" [(ngModel)]="currentOrder.status" id="status">
+                <option value="pend">معلق</option>
+                <option value="paid">پرداخت شده</option>
+                <option value="sent">ارسال شده</option>
+            </select>
+        </div>
+    </div>
+    <hr>
+    <h3>اقلام سفارش</h3>
+    <div class="form-row align-items-end" *ngFor="let item of currentOrder.items;let i = index">
+        <div class="form-group col-1">
+            <label for="code">کد کالا</label>
+            <input (keyup)="SearchByCode($event,code.value,i)" #code [name]="'code'+i" type="text" class="form-control"
+                [(ngModel)]="item.code" id="code">
+        </div>
+        <div class="form-group col-2">
+            <label for="name">نام کالا</label>
+            <input [name]="'name'+i" type="button" class="form-control"  [(ngModel)]="item.name"
+                id="name" data-toggle="modal" data-target="#selectProductModal" (click)="index=i">
+        </div>
+        <div class="form-group col-1">
+            <label for="_qty">تعداد</label>
+            <input [name]="'_qty'+i" type="text" class="form-control" [(ngModel)]="item._qty" id="_qty">
+        </div>
+        <div class="form-group col-1">
+            <label for="_price">فی</label>
+            <input disabled [name]="'_price'+i" type="text" class="form-control" [ngModel]="item._price|number"
+                id="_price">
+        </div>
+        <div class="form-group col-1">
+            <label for="_discount">تخفیف</label>
+            <input [name]="'_discount'+i" type="text" class="form-control" [(ngModel)]="item._discount" id="_discount">
+        </div>
+        <div class="form-group col-2">
+            <label for="_discountType">نوع تخفیف</label>
+            <select [name]="'_discountType'+i" class="form-control" [(ngModel)]="item._discountType" id="_discountType">
+                <option value="percent">درصد</option>
+                <option value="price">مبلغ</option>
+            </select>
+        </div>
+        <div class="form-group col-1">
+            <label for="grossPrice">قیمت</label>
+            <input disabled [name]="'grossPrice'+i" type="text" class="form-control" [ngModel]="item.grossPrice|number"
+                id="grossPrice">
+        </div>
+        <div class="form-group col-1">
+            <label for="totalDiscount">تخفیف</label>
+            <input disabled [name]="'totalDiscount'+i" type="text" class="form-control"
+                [ngModel]="item.totalDiscount|number" id="totalDiscount">
+        </div>
+        <div class="form-group col-1">
+            <label for="netPrice">مجموع</label>
+            <input disabled [name]="'netPrice'+i" type="text" class="form-control" [ngModel]="item.netPrice|number"
+                id="netPrice">
+        </div>
+        <div class="form-group col-1">
+            <button (click)="RemoveItem(i)" class="btn btn-danger fa fa-trash mb-0 py-2"></button>
+        </div>
+    </div>
+    <button (click)="AddItem($event)" class="btn btn-success fa fa-plus btn-block"></button>
+    <hr>
+    <button (click)="Save(currentOrder)" type="submit" class="btn btn-primary">ذخیره</button>
+</form>
+
+
+
+<div class="modal fade" dir="ltr" id="selectProductModal" tabindex="-1" role="dialog"
+    aria-labelledby="selectProductModalLabel" aria-hidden="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title" id="selectProductModalLabel">انتخاب محصول</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="ModalClosed()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover table-dark table-sm" dir="rtl">
+                    <thead class="border">
+                        <tr class="form-group">
+                            <th scope="col">#</th>
+                            <th scope="col">
+                                <select [(ngModel)]='searchOption.category'
+                                    (change)="FilterProduct('category',$event.target.value)">
+                                    <option value="">همه</option>
+                                    <option [value]='cat' *ngFor="let cat of categories">{{cat}}</option>
+                                </select>
+                            </th>
+                            <th scope="col">
+                                <input [(ngModel)]='searchOption.name' (keyup)="FilterProduct('name',name.value)" #name
+                                    type="text" placeholder="نام">
+                            </th>
+                            <th scope="col">
+                                <input [(ngModel)]='searchOption.code' (keyup)="FilterProduct('code',code.value)" #code
+                                    type="text" width="10" placeholder="کد">
+                            </th>
+                            <th scope="col">قیمت</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of filteredProductList.slice(0,10);let i=index"
+                            (click)="SelectProduct(product,i)" class=" pb-0">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{product.category}}</td>
+                            <td>{{product.name}}</td>
+                            <td>{{product.code}}</td>
+                            <td>{{product.price|number}} تومان</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" #closeModal class="btn btn-secondary ml-1" data-dismiss="modal">بستن</button>
+            </div>
+        </div>
+    </div>
+</div>

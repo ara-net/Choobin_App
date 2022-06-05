@@ -1,0 +1,184 @@
+<p class="alert alert-secondary">انبار</p>
+<button (click)="Add()" class="btn btn-primary pb-0" data-toggle="modal" data-target="#editModal">اضافه کردن&nbsp;<i
+        class="fa fa-plus fa-lg"></i></button>
+<table class="table table-hover table-dark">
+    <thead class="border">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">نام کالا</th>
+            <th scope="col">کد</th>
+            <th scope="col">موجودی</th>
+            <th scope="col">قیمت</th>
+            <th scope="col">عملیات</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let good of GoodList;let i=index" class=" pb-0">
+            <th scope="row">{{i+1}}</th>
+            <td>{{good.name}}</td>
+            <td>
+                <h6>{{good.code}}</h6>
+            </td>
+            <td>{{good.ammount}} {{good.unit|unitName}}</td>
+            <td>{{good.price|number}} تومان</td>
+            <td>
+                <button (click)="SetCurrentGood(good)" class="btn btn-primary pb-0 mr-1" data-toggle="modal"
+                    data-target="#editModal">
+                    <i class="ft-edit"></i>
+                </button>
+                <button (click)="SetCurrentGood(good)" class="btn btn-success pb-0 mr-1" data-toggle="modal"
+                    data-target="#ByModal">
+                    <i class="ft-shopping-cart"></i>
+                </button>
+                <button (click)="SetCurrentGood(good)" class="btn btn-warning pb-0" data-toggle="modal"
+                    data-target="#HistoryModal">
+                    <i class="ft-list"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!--Edit Modal -->
+<div class="modal fade" dir="ltr" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+    aria-hidden="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title" id="editModalLabel">ویرایش</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form #f="ngForm" class="text-left">
+                    <div class="form-group">
+                        <label for="name">نام</label>
+                        <input type="text" class="form-control" [ngModel]="currentGood.name" id="name" name="name">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col">
+                            <label for="ammount">موجودی</label>
+                            <input min="1" max="7" step="0.5" name="ammount" type="number" class="form-control"
+                                [ngModel]="currentGood.ammount" id="ammount">
+                        </div>
+                        <div class="form-group  col-4">
+                            <label for="orderPoint">نقطه سفارش</label>
+                            <input min="1" type="number" name="orderPoint" class="form-control"
+                                [ngModel]="currentGood.orderPoint" id="orderPoint">
+                        </div>
+                        <div class="form-group  col-4">
+                            <label for="code">کد</label>
+                            <input min="1000" type="text" name="code" class="form-control" [ngModel]="currentGood.code"
+                                id="code">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col">
+                            <label for="exist">موجود</label>
+                            <input name="exist" type="checkbox" class="form-control" [ngModel]="currentGood.exist"
+                                id="exist">
+                        </div>
+                        <div class="form-group col-5">
+                            <label for="unit">واحد اندازه گیری</label>
+                            <select class="form-control" id="unit" name="unit" [ngModel]="currentGood.unit">
+                                <option *ngFor="let unit of units" [value]='unit'>{{unitList[unit]}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group  col-5">
+                            <label for="price">قیمت</label>
+                            <input min="1" type="number" name="price" class="form-control" [ngModel]="currentGood.price"
+                                id="price">
+                        </div>
+                    </div>
+
+                    <hr>
+                    <button type="button" #closeEditModal class="btn btn-secondary ml-1"
+                        data-dismiss="modal">بستن</button>
+                    <button (click)="Save(f.value)" type="submit" class="btn btn-primary">ذخیره</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--By Modal -->
+<div class="modal fade" dir="ltr" id="ByModal" tabindex="-1" role="dialog" aria-labelledby="ByModalLabel"
+    aria-hidden="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title" id="ByModalLabel">خرید</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form #f2="ngForm" class="text-left">
+                    <div class="form-row">
+
+                        <div class="form-group  col">
+                            <label for="ammount">مقدار / تعداد</label>
+                            <input min="0.5" step="0.5" [ngModel]='byObject.ammount' name="ammount" type="number"
+                                class="form-control" id="ammount">
+                        </div>
+                        <div class="form-group  col">
+                            <label for="price">قیمت (تومان)</label>
+                            <input min="1" type="number" [ngModel]='byObject.price' name="price" class="form-control"
+                                id="price">
+                        </div>
+
+                    </div>
+                    <div class="form-group  col-7">
+                        <label for="date">تاریخ خرید</label>
+                        <jalali-date-picker [mode]='calendarMode' id="date" name='date'
+                            [(selectedDate)]='byObject.date'>
+                        </jalali-date-picker>
+                    </div>
+                    <hr>
+                    <button type="button" #closeByModal class="btn btn-secondary ml-1"
+                        data-dismiss="modal">بستن</button>
+                    <button (click)="By(f2.value)" type="submit" class="btn btn-primary">ذخیره</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--History Modal -->
+<div class="modal fade" dir="ltr" id="HistoryModal" tabindex="-1" role="dialog" aria-labelledby="HistoryModalLabel"
+    aria-hidden="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title" id="HistoryModalLabel">تاریخچه خرید</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover table-dark table-sm" dir="rtl">
+                    <thead class="border">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">تاریخ</th>
+                            <th scope="col">مقدار / تعداد</th>
+                            <th scope="col">قیمت</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let good of currentGood.byList;let i=index" class=" pb-0">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{good.date.persianDate}}</td>
+                            <td>{{good.ammount}} {{currentGood.unit|unitName}}</td>
+                            <td>{{good.price|number}} تومان</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

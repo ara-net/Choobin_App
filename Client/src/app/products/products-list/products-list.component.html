@@ -1,0 +1,104 @@
+<p class="alert alert-secondary">{{url}}</p>
+<button (click)="Add()" class="btn btn-primary pb-0" data-toggle="modal" data-target="#editModal">اضافه کردن&nbsp;<i
+        class="fa fa-plus fa-lg"></i></button>
+
+<table class="table table-hover table-dark">
+    <thead class="border">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">نام کالا</th>
+            <th scope="col">کد</th>
+            <th scope="col">حجم رزین</th>
+            <th scope="col">درجه سختی</th>
+            <th scope="col">قیمت تمام شده</th>
+            <th scope="col">عملیات</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productList;let i=index" class=" pb-0">
+            <th scope="row">{{i+1}}</th>
+            <td>{{product.name}}</td>
+            <td><h6>{{product.code}}</h6> </td>
+            <td>{{product.resinAmmount}} گرم</td>
+            <td>{{product.hardness}}</td>
+            <td>{{product.price|number}} تومان</td>
+            <td>
+                <button (click)="SetCurrentProduct(product)" class="btn btn-primary pb-0 mr-1" data-toggle="modal"
+                    data-target="#editModal">
+                    <i class="ft-edit"></i>
+                </button>
+                <button (click)="SetCurrentProduct(product)" class="btn btn-success pb-0 mr-1" data-toggle="modal"
+                    data-target="#editModal">
+                    <i class="ft-shopping-cart"></i>
+                </button>
+                <button class="btn btn-danger pb-0">
+                    <i class="ft-trash-2"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- Modal -->
+<div class="modal fade" dir="ltr" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+    aria-hidden="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title" id="editModalLabel">ویرایش</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form #f="ngForm" class="text-left">
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="category">دسته بندی</label>
+                            <select *ngIf="formMode=='edit' else cat" class="form-control" id="category" name="category"
+                                [ngModel]="currentProduct.category">
+                                <option *ngFor="let cat of categories">{{cat.name}}</option>
+                            </select>
+                            <ng-template #cat>
+                                <div class="form-group">
+                                    <input disabled type="text" class="form-control" [ngModel]="currentProduct.category"
+                                        id="category" name="category">
+                                </div>
+                            </ng-template>
+                        </div>
+                        <div class="form-group col-8">
+                            <label for="name">نام</label>
+                            <input type="text" class="form-control" [ngModel]="currentProduct.name" id="name"
+                                name="name">
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col">
+                            <label for="hardness">سختی کار</label>
+                            <input min="1" max="7" step="0.5" name="hardness" type="number" class="form-control"
+                                [ngModel]="currentProduct.hardness" id="hardness">
+                        </div>
+                        <div class="form-group  col-4">
+                            <label for="resinAmmount">حجم رزین</label>
+                            <input min="1" type="number" name="resinAmmount" class="form-control"
+                                [ngModel]="currentProduct.resinAmmount" id="resinAmmount">
+                        </div>
+                        <div class="form-group  col-4">
+                            <label for="code">کد</label>
+                            <input min="1000" type="number" name="code" class="form-control"
+                                [ngModel]="currentProduct.code" id="code">
+                        </div>
+                    </div>
+
+                    <hr>
+                    <button type="button" #closeEditModal class="btn btn-secondary ml-1"
+                        data-dismiss="modal">بستن</button>
+                    <button (click)="Save(f.value)" type="submit" class="btn btn-primary">ذخیره</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

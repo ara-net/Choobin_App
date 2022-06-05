@@ -1,0 +1,387 @@
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44432"), 
+    "code" : "1101", 
+    "name" : "دریا", 
+    "hardness" : 5.5, 
+    "category" : "دستبند", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44433"), 
+    "code" : "1102", 
+    "name" : "رستم", 
+    "hardness" : 5.5, 
+    "category" : "دستبند", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44434"), 
+    "code" : "1103", 
+    "name" : "گدازه", 
+    "hardness" : 5.5, 
+    "category" : "دستبند", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44435"), 
+    "code" : "1201", 
+    "name" : "آسمان", 
+    "hardness" : NumberInt(7), 
+    "category" : "انگشتر", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44436"), 
+    "code" : "1202", 
+    "name" : "دریا", 
+    "hardness" : NumberInt(7), 
+    "category" : "انگشتر", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44437"), 
+    "code" : "1301", 
+    "name" : "آسمان", 
+    "hardness" : NumberInt(5), 
+    "category" : "ست", 
+    "resinAmmount" : "30", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44438"), 
+    "code" : "1302", 
+    "name" : "حباب", 
+    "hardness" : NumberInt(5), 
+    "category" : "ست", 
+    "resinAmmount" : "30", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44439"), 
+    "code" : "1303", 
+    "name" : "ست دریا", 
+    "hardness" : NumberInt(5), 
+    "category" : "ست", 
+    "resinAmmount" : "40", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4443a"), 
+    "code" : "1304", 
+    "name" : "ست انار", 
+    "hardness" : NumberInt(5), 
+    "category" : "ست", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4443b"), 
+    "code" : "1305", 
+    "name" : "ست اناردون", 
+    "hardness" : NumberInt(5), 
+    "category" : "ست", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4443c"), 
+    "code" : "2001", 
+    "name" : "چاپ کوچک", 
+    "hardness" : 1.5, 
+    "category" : "تزئینی", 
+    "resinAmmount" : "40", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4443d"), 
+    "code" : "2002", 
+    "name" : "چاپ بزرگ", 
+    "hardness" : 1.5, 
+    "category" : "تزئینی", 
+    "resinAmmount" : "50", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4443e"), 
+    "code" : "2003", 
+    "name" : "جاکلیدی بزرگ", 
+    "hardness" : 1.0, 
+    "category" : "تزئینی", 
+    "resinAmmount" : "40", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4443f"), 
+    "code" : "2004", 
+    "name" : "جاکلیدی کوچک", 
+    "hardness" : 1.0, 
+    "category" : "تزئینی", 
+    "resinAmmount" : "30", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44440"), 
+    "code" : "2101", 
+    "name" : " قلب", 
+    "hardness" : 1.5, 
+    "category" : "تخته سرو", 
+    "resinAmmount" : "40", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44441"), 
+    "code" : "2102", 
+    "name" : "گوزن", 
+    "hardness" : 1.5, 
+    "category" : "تخته سرو", 
+    "resinAmmount" : "40", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44442"), 
+    "code" : "2103", 
+    "name" : "صحرا", 
+    "hardness" : 1.5, 
+    "category" : "تخته سرو", 
+    "resinAmmount" : "40", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44443"), 
+    "code" : "2201", 
+    "name" : "دریا گرد 20سانتی", 
+    "hardness" : 1.5, 
+    "category" : "ساعت", 
+    "resinAmmount" : "45", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44444"), 
+    "code" : "1001", 
+    "name" : "کوه مثلث", 
+    "hardness" : NumberInt(5), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "10", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44445"), 
+    "code" : "1002", 
+    "name" : "اشک مشکی", 
+    "hardness" : NumberInt(5), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "10", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44446"), 
+    "code" : "1003", 
+    "name" : "شاخه آبی", 
+    "hardness" : NumberInt(5), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "10", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44447"), 
+    "code" : "1004", 
+    "name" : "پاییز", 
+    "hardness" : NumberInt(5), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "10", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44448"), 
+    "code" : "1005", 
+    "name" : "حباب سیز", 
+    "hardness" : NumberInt(5), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "10", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44449"), 
+    "code" : "1006", 
+    "name" : "کوه مربع", 
+    "hardness" : NumberInt(5), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "10", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4444a"), 
+    "code" : "1007", 
+    "name" : "ماگما", 
+    "hardness" : NumberInt(5), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "10", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4444b"), 
+    "code" : "1008", 
+    "name" : "بلوط", 
+    "hardness" : NumberInt(5), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "25", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4444c"), 
+    "code" : "1009", 
+    "name" : "آرش", 
+    "hardness" : NumberInt(6), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "10", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4444d"), 
+    "code" : "1010", 
+    "name" : "سهراب", 
+    "hardness" : NumberInt(5), 
+    "category" : "گردنبند", 
+    "resinAmmount" : NumberInt(5), 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4444e"), 
+    "code" : "1011", 
+    "name" : "مهفام", 
+    "hardness" : NumberInt(6), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4444f"), 
+    "code" : "1012", 
+    "name" : "ترنج", 
+    "hardness" : NumberInt(6), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "10", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44450"), 
+    "code" : "1013", 
+    "name" : "مهتاب", 
+    "hardness" : NumberInt(6), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44451"), 
+    "code" : "1014", 
+    "name" : "چوبین", 
+    "hardness" : NumberInt(7), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44452"), 
+    "code" : "1015", 
+    "name" : "سورنا", 
+    "hardness" : NumberInt(5), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "10", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44453"), 
+    "code" : "1016", 
+    "name" : "موج", 
+    "hardness" : NumberInt(6), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44454"), 
+    "code" : "1017", 
+    "name" : "آذر", 
+    "hardness" : 5.5, 
+    "category" : "گردنبند", 
+    "resinAmmount" : "10", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44455"), 
+    "code" : "1018", 
+    "name" : "بابونه", 
+    "hardness" : 5.5, 
+    "category" : "گردنبند", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44456"), 
+    "code" : "1019", 
+    "name" : "انار", 
+    "hardness" : NumberInt(6), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44457"), 
+    "code" : "1020", 
+    "name" : "اناردون", 
+    "hardness" : NumberInt(5), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "1", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44458"), 
+    "code" : "1021", 
+    "name" : "زمستان", 
+    "hardness" : NumberInt(6), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "30", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c44459"), 
+    "code" : "1022", 
+    "name" : "خاطره", 
+    "hardness" : NumberInt(5), 
+    "category" : "گردنبند", 
+    "resinAmmount" : NumberInt(5), 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4445a"), 
+    "code" : "1023", 
+    "name" : "ماهور", 
+    "hardness" : NumberInt(5), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4445b"), 
+    "code" : "1024", 
+    "name" : "صلیب", 
+    "hardness" : NumberInt(7), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "50", 
+    "isDeleted" : false
+}
+{ 
+    "_id" : ObjectId("5e963ec5aa22343ad0c4445c"), 
+    "code" : "1025", 
+    "name" : "بنفشه", 
+    "hardness" : NumberInt(6), 
+    "category" : "گردنبند", 
+    "resinAmmount" : "20", 
+    "isDeleted" : false
+}

@@ -1,0 +1,66 @@
+{ 
+    "_id" : ObjectId("5e96223a791fb22a281353e5"), 
+    "isDeleted" : false, 
+    "exist" : true, 
+    "byList" : [
+        {
+            "date" : ISODate("2020-04-14T20:50:27.200+0000"), 
+            "_id" : ObjectId("5e96223a791fb22a281353e6"), 
+            "ammount" : NumberInt(5), 
+            "price" : NumberInt(1000)
+        }
+    ], 
+    "name" : "بند چرمی مشکی ضخیم", 
+    "code" : "TIE_BL_01", 
+    "unit" : "m", 
+    "ammount" : NumberInt(5), 
+    "orderPoint" : NumberInt(2), 
+    "price" : NumberInt(1000), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e962240791fb22a281353e8"), 
+    "isDeleted" : false, 
+    "exist" : true, 
+    "byList" : [
+        {
+            "date" : ISODate("2020-04-14T20:50:27.200+0000"), 
+            "_id" : ObjectId("5e962240791fb22a281353e9"), 
+            "ammount" : NumberInt(3), 
+            "price" : NumberInt(1000)
+        }
+    ], 
+    "name" : "بند چرمی قهوه ای ضخیم", 
+    "code" : "TIE_BR_01", 
+    "unit" : "m", 
+    "ammount" : NumberInt(3), 
+    "orderPoint" : NumberInt(2), 
+    "price" : NumberInt(1000), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e962269791fb22a281353ef"), 
+    "isDeleted" : false, 
+    "exist" : true, 
+    "byList" : [
+        {
+            "date" : ISODate("2020-04-14T20:50:27.200+0000"), 
+            "_id" : ObjectId("5e962269791fb22a281353f0"), 
+            "ammount" : NumberInt(2000), 
+            "price" : NumberInt(1100)
+        }, 
+        {
+            "date" : ISODate("2020-04-14T21:06:21.561+0000"), 
+            "_id" : ObjectId("5e9625d25bf8b53618785eb4"), 
+            "ammount" : NumberInt(3000), 
+            "price" : NumberInt(1350)
+        }
+    ], 
+    "name" : "رزین رقیق", 
+    "code" : "RESIN_WATERY", 
+    "unit" : "gr", 
+    "ammount" : NumberInt(5000), 
+    "orderPoint" : NumberInt(300), 
+    "price" : NumberInt(1350), 
+    "__v" : NumberInt(1)
+}

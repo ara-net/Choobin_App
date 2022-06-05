@@ -1,0 +1,64 @@
+<p class="alert alert-secondary">دسته بندی ها</p>
+<button (click)="Add()" class="btn btn-primary pb-0" data-toggle="modal" data-target="#editModal">اضافه کردن&nbsp;<i
+        class="fa fa-plus fa-lg"></i></button>
+<table class="table table-hover table-dark">
+    <thead class="border">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">نام</th>
+            <th scope="col">کد</th>
+            <th scope="col">عملیات</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let category of categories;let i=index" class=" pb-0">
+            <th scope="row">{{i+1}}</th>
+            <td>{{category.name}}</td>
+            <td>{{category.code}}</td>
+            <td>
+                <button (click)="SetCurrentCategory(category)" class="btn btn-primary pb-0 mr-1" data-toggle="modal"
+                    data-target="#editModal">
+                    <i class="ft-edit"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- Modal -->
+<div class="modal fade" dir="ltr" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+    aria-hidden="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title" id="editModalLabel">ویرایش</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form #f="ngForm" class="text-left">
+                    <div class="form-row">
+                        <div class="form-group  col-4">
+                            <label for="code">کد</label>
+                            <input min="10" type="number" name="code" class="form-control"
+                                [ngModel]="currentCategory.code" id="code">
+                        </div>
+                        <div class="form-group col-8">
+                            <label for="name">نام</label>
+                            <input type="text" class="form-control" [ngModel]="currentCategory.name" id="name"
+                                name="name">
+                        </div>
+
+                    </div>
+                    <hr>
+                    <button type="button" #closeEditModal class="btn btn-secondary ml-1"
+                        data-dismiss="modal">بستن</button>
+                    <button (click)="Save(f.value)" type="submit" class="btn btn-primary">ذخیره</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

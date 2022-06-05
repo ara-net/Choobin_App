@@ -1,0 +1,42 @@
+{ 
+    "_id" : ObjectId("5e9639038abb22442c8b76c5"), 
+    "name" : "تزئینی", 
+    "code" : NumberInt(20), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e9639198abb22442c8b76c7"), 
+    "name" : "تخته سرو", 
+    "code" : NumberInt(21), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e9639288abb22442c8b76c9"), 
+    "name" : "ساعت", 
+    "code" : NumberInt(22), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e9639698abb22442c8b76cb"), 
+    "name" : "انگشتر", 
+    "code" : NumberInt(12), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e9639738abb22442c8b76cd"), 
+    "name" : "ست", 
+    "code" : NumberInt(13), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e96397d8abb22442c8b76cf"), 
+    "name" : "گردنبند", 
+    "code" : NumberInt(10), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e96398b8abb22442c8b76d1"), 
+    "name" : "دستبند", 
+    "code" : NumberInt(11), 
+    "__v" : NumberInt(0)
+}
